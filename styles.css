@@ -65,9 +65,10 @@ header {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  width: 30px;
+  width: 35px;
   height: 30px;
   justify-content: space-around;
+  padding: 3px;
 }
 
 .nav-toggle-label span {
