@@ -91,10 +91,9 @@ header {
 }
 
 .info-box {
-  padding: 1rem 0;
-  background: linear-gradient(135deg, #dad666 0%, #a27c4b 100%);
-  color: white;
-  border-radius: 8px;
+  background-color: lightblue;
+  padding: 1rem 1rem;
+  border-radius: 10px;
   margin-bottom: 2rem;
 }
 
@@ -152,6 +151,7 @@ header {
 
 svg {
   vertical-align: middle;
+  margin-top: -3px;
 }
 
 .block-container {
@@ -163,20 +163,6 @@ svg {
 .block {
   border: 1px solid black;
   width: calc(50% - 8px);
-  /* flex: 1 1 calc(50% - 16px); Two per row */
-  /* aspect-ratio: 1 / 1;         Makes width = height */
-  /* background-color: #eee; */
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-  /* font-size: 24px; */
-}
-
-/* Mobile view: one per row */
-@media (max-width: 600px) {
-  .block {
-    flex: 1 1 100%;
-  }
 }
 
 /* Footer */
@@ -261,6 +247,10 @@ footer {
 
   .intro-card {
     font-size: 1rem;
+  }
+
+  .block {
+    flex: 1 1 100%;
   }
 }
 
