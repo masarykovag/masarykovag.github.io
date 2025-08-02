@@ -113,6 +113,12 @@ header {
   font-size: 1.5rem;
 }
 
+.content h4 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
 .content p {
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
