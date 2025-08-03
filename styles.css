@@ -146,13 +146,35 @@ header {
   align-items: center;
 }
 
+.intro-container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+}
+
 .intro-card {
   text-align: center;
   background-color: #2c3e50;
   color: white;
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 2rem;
+  flex: 1;
+}
+
+.intro-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 svg {
@@ -249,6 +271,11 @@ footer {
 
   .info-box p {
     font-size: 1rem;
+  }
+
+  .intro-container {
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .intro-card {
