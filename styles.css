@@ -140,7 +140,7 @@ header {
   color: inherit;
 }
 
-.main-page {
+.center-vertical {
   display: flex;
   justify-content: center;
   align-items: center;
