@@ -290,6 +290,12 @@ svg {
   .block:nth-child(6) { order: 7; }
   .block:nth-child(7) { order: 6; }
   .block:nth-child(8) { order: 8; }
+  .block:nth-child(9) { order: 9; }
+  .block:nth-child(10) { order: 10; }
+
+  .block.middle {
+    margin-left: calc(25% + 4px);
+  }
 }
 
 /* Footer */
@@ -398,5 +404,4 @@ footer {
   .content {
     text-align: initial;
   }
-
 }
