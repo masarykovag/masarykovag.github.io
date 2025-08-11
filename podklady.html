@@ -35,7 +35,15 @@
       <ul class="nav-menu">
         <li><a href="index.html" class="nav-link">Úvod</a></li>
         <li><a href="sluzby.html" class="nav-link">Služby</a></li>
-        <li><a href="podklady.html" class="nav-link active">Podklady</a></li>
+        <li class="nav-item-with-submenu">
+          <a href="podklady.html" class="nav-link active">Podklady</a>
+          <ul class="submenu">
+            <li><a href="#byt" class="submenu-link">Byt</a></li>
+            <li><a href="#rodinny-dom" class="submenu-link">Rodinný dom</a></li>
+            <li><a href="#pozemok" class="submenu-link">Pozemok</a></li>
+            <li><a href="#prevadzkove-objekty" class="submenu-link">Prevádzkové objekty</a></li>
+          </ul>
+        </li>
         <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
       </ul>
     </nav>
@@ -64,7 +72,7 @@
           <img src="images/bytovy_dom.png" alt="Bytový dom">
         </div>
 
-        <div class="block">
+        <div class="block" id="byt">
           <h3>Byt</h3>
           <ul>
             <li>
@@ -99,7 +107,7 @@
           <img src="images/rodinny_dom.png" alt="Rodinný dom">
         </div>
 
-        <div class="block">
+        <div class="block" id="rodinny-dom">
           <h3>Rodinný dom (chata, rekreačný dom a chata, záhradná chata)</h3>
           <ul>
             <li>
@@ -151,7 +159,7 @@
           <img src="images/vinohrad.png" alt="Vinohrad">
         </div>
 
-        <div class="block">
+        <div class="block" id="pozemok">
           <h3>Pozemok</h3>
           <ul>
             <li>
@@ -180,7 +188,7 @@
           <img src="images/prevadzkovy_objekt.png" alt="Prevádzkový objekt">
         </div>
 
-        <div class="block">
+        <div class="block" id="prevadzkove-objekty">
           <h3>Prevádzkové objekty</h3>
           <ul>
             <li>
@@ -254,6 +262,56 @@
   <footer>
     <p>&copy; 2025 Gabriela Masaryková. All rights reserved.</p>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const submenuToggle = document.querySelector('.nav-item-with-submenu > .nav-link');
+      const submenu = document.querySelector('.submenu');
+      
+      if (submenuToggle && submenu) {
+        // Handle click/touch events for submenu toggle
+        submenuToggle.addEventListener('click', function(e) {
+          const isMobile = window.innerWidth <= 768;
+          
+          if (isMobile) {
+            e.preventDefault();
+            submenu.classList.toggle('show');
+          }
+        });
+        
+        // Close submenu when clicking outside (only on mobile)
+        document.addEventListener('click', function(e) {
+          const isMobile = window.innerWidth <= 768;
+          if (isMobile && !e.target.closest('.nav-item-with-submenu')) {
+            submenu.classList.remove('show');
+          }
+        });
+        
+        // Close submenu and entire mobile menu when clicking on submenu links
+        const submenuLinks = document.querySelectorAll('.submenu-link');
+        const navToggle = document.querySelector('.nav-toggle');
+        
+        submenuLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            // Close the submenu
+            submenu.classList.remove('show');
+            
+            // Close the entire mobile navigation menu by unchecking the toggle
+            if (navToggle) {
+              navToggle.checked = false;
+            }
+          });
+        });
+        
+        // Handle window resize to ensure proper behavior
+        window.addEventListener('resize', function() {
+          if (window.innerWidth > 768) {
+            submenu.classList.remove('show');
+          }
+        });
+      }
+    });
+  </script>
 </body>
 
 </html>

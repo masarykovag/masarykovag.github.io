@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Account for sticky header */
+}
+
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
@@ -58,6 +63,84 @@ header {
 .nav-link:hover,
 .nav-link.active {
   background-color: #34495e;
+}
+
+/* Submenu styles */
+.nav-item-with-submenu {
+  position: relative;
+}
+
+.nav-item-with-submenu > .nav-link::after {
+  content: ' ▼';
+  font-size: 0.8em;
+  margin-left: 0.5rem;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #34495e;
+  min-width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  list-style: none;
+  padding: 0.5rem 0;
+  z-index: 1001;
+}
+
+.nav-item-with-submenu:hover .submenu,
+.submenu.show {
+  display: block;
+}
+
+.submenu-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.submenu-link:hover {
+  background-color: #2c3e50;
+}
+
+/* Mobile responsive styles for submenu */
+@media (max-width: 768px) {
+  .nav-item-with-submenu:hover .submenu {
+    display: none; /* Disable hover on mobile */
+  }
+  
+  .submenu.show {
+    display: block !important; /* Only show when .show class is added via JavaScript */
+  }
+  
+  .submenu {
+    position: static;
+    box-shadow: none;
+    background-color: #34495e;
+    border-radius: 0;
+    margin-top: 0;
+    padding: 0;
+    display: none;
+  }
+  
+  .submenu-link {
+    padding: 1rem 3rem;
+    border-bottom: 1px solid #2c3e50;
+    background-color: #34495e;
+  }
+  
+  .submenu-link:hover {
+    background-color: #2c3e50;
+  }
+  
+  .submenu-link:last-child {
+    border-bottom: none;
+  }
 }
 
 /* Hide hamburger menu elements on desktop */
