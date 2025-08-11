@@ -108,18 +108,13 @@ header {
 
 .content {
   padding: 2rem 0;
+  text-align: justify;
 }
 
 .content h3 {
   color: #2c3e50;
   margin-bottom: 1rem;
   font-size: 1.5rem;
-}
-
-.content h4 {
-  color: #2c3e50;
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
 }
 
 .content p {
@@ -316,4 +311,9 @@ footer {
   .content h3 {
     font-size: 1.3rem;
   }
+
+  .content {
+    text-align: initial;
+  }
+
 }
