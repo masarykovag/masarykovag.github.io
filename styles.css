@@ -8,6 +8,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px; /* Account for sticky header */
+  overflow-y: scroll; /* Always show vertical scrollbar to prevent layout shift */
 }
 
 body {
@@ -169,6 +170,7 @@ header {
 
 /* Main content */
 .main-content {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
@@ -278,6 +280,14 @@ svg {
   display: block;
   margin: 0 auto;
   border-radius: 10px;
+}
+
+.square {
+  aspect-ratio: 1;
+}
+
+.landscape {
+  aspect-ratio: 513 / 342;
 }
 
 /* Desktop flex order for blocks */
